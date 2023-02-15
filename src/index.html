@@ -7,8 +7,74 @@
   </head>
   <body>
     <div id="root">
-      <h1>Hello world!</h1>
-    </div>
-    <script src="index.js" type="module"></script>
+      <header>
+          <div>
+            <img id="logo" src="img/portadaRoja.jpg" alt="Imagen del logo.">
+          </div>                     
+      </header>
+      <br> <br> <br>
+
+      <section id="section0" style="display: block;">
+        <br><br>
+        <table style="text-align: center;">
+          <tr>
+            <td><img id ="bienv" src="img/feliz-dia-del-amor-y-la-amistad-53_720.png" alt="logo bienvenida"></td>
+          </tr>
+          <tr>
+            <td><h1> ¡Bienvenid@ <strong><span id="nombreUsuario">  </span>!</strong></h1>
+        <h1><strong>Nos encanta tenerte aquí. Te gustaría enviar un mensaje cifrado a alguien y que nadie pueda leerlo... sólo tu y esa personita. Qué esperas? Escribe tu mensaje a cifrar y dale click en Codificar ;)</strong></h1></td><h1>
+          </tr>
+
+          <tr>
+            <td><button class="botones" type="button" id="btnEmpezar">Empezar</button></td> 
+          </tr>
+        </table>
+
+      </section>
+
+      <section id="section1" style="display: none;">
+        <div id="container1" style="display: flex;">
+          <div>
+            <img src="img/osocora__360.gif" alt="Imagen Osita">
+              <br><br><br>
+              <img id="silent" src="img/quiet-silence.gif" alt="silencio">
+
+          </div>
+
+          <div>
+            <p>Mensaje a Cifrar:</p>
+
+            <textarea name="text" id="aCifrar" cols="50" rows="15"></textarea>
+            <p>Posiciones: <input type="number" id="positions" min="1"></p>
+            <button type="submit" value="Codificar">Codificar</button>
+
+            <h1>Mensaje cifrado:</h1>
+            <div id="msjCifrado">   
+             <p>Aquí iría el mensaje cifrado</p> 
+            </div>
+          </div>
+          <div>
+            <p>Mensaje a decifrar:</p>
+            <textarea name="text" id="aCifrar1" cols="50" rows="15"></textarea>
+            <br><br>
+            <button>Decodificar</button>
+            <br><br><br>  
+
+            <h1>Mensaje decifrado:</h1>
+            <div id="msjDecifrado"> 
+          
+             <p>Aquí iría el mensaje cifrado</p> 
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+          
+</div>    
+    <footer>
+        <p> Proyecto2 "Cipher Caesar" por Diana Quispe para Laboratoria -2023</p>
+    </footer>
+  <script src="index.js" type="module"></script>
   </body>
 </html>

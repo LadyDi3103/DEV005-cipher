@@ -1,3 +1,4 @@
+//Aquí se implementará el objeto cipher
 const cipher = {
   // ...
 };
