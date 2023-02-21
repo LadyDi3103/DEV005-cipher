@@ -29,39 +29,53 @@ function muestraSeccionOne(){
 // })
 // let positions = posiciones.value;
 // console.log("Nueva variable de offset", positions);
+// let posiciones = document.getElementById('positions');
+// let texTarea1 = document.getElementById('aCifrar');
 
 let boton = document.getElementById('btnCodificar');
     boton.addEventListener("click", capturarTextTarea1Yposiciones);
+    // boton.addEventListener("click", cipher.encode(posiciones, texTarea1));
+    
     
   
 function capturarTextTarea1Yposiciones(){
- let posiciones = document.getElementById('positions').value;
  let texTarea1 = document.getElementById('aCifrar').value;
- console.log(posiciones);
- console.log(texTarea1);
+ let posiciones = document.getElementById('positions').value;
+
+//  let boton = document.getElementById('btnCodificar');
+//  boton.addEventListener('click', cipher.encode(posiciones, texTarea1));
+
+ let msjCifrado = document.getElementById('msjCifrado');
+ 
+ msjCifrado = cipher.encode(posiciones, texTarea1);
+
+ let nuevoMensajeCifrado = document.getElementById('aquiVa');
+ nuevoMensajeCifrado.textContent= msjCifrado;
+
+
+//  msjCifrado.textContent= msjCifrado;
+
+//  console.log(posiciones);
+//  console.log(texTarea1);
+//  console.log(msjCifrado);
+//  console.log(nuevoMensajeCifrado );
 }
-
-let msjCifrado = document.getElementById('msjCifrado');
-msjCifrado.textContent = boton;
-console.log(msjCifrado);
-
-
 
 // boton.addEventListener('click', function());
 
+let botonDecodificar = document.getElementById('btnDecodificar');
+ botonDecodificar.addEventListener('click', decodificarMensaje);
 
+function decodificarMensaje(){
+let texTarea2 = document.getElementById('aCifrar1').value;
+let posiciones = document.getElementById('positions').value;
 
-// let btnCodificar = document.getElementById('btnCodificar').addEventListener("click", cipher.encode(posiciones,texTarea1)
+let msjDecifrado = document.getElementById('msjDecifrado');
+msjDecifrado = cipher.decode(- posiciones, texTarea2);
 
-// msjCifrado
-// cipher.encode(posiciones, texTarea1);
-// //.value
+let nuevoMensajeDecifrado = document.getElementById('aquiVaDecifrado');
+nuevoMensajeDecifrado.textContent = msjDecifrado;
 
-// );
+ }
 
-// 
-
-
-// let texTarea2 = document.getElementById('aCifrar1').value;
-// let mensajeDecifrado= cipher.decode(-posiciones, texTarea2);
 // document.getElementById('msjDecifrado').textContent = mensajeDecifrado;
