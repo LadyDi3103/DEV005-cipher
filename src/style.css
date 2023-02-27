@@ -19,8 +19,13 @@ header {
 #seccion0  {
     text-align: center;
 
+}
+
+#section1 {
+  padding: 20px;
 
 }
+
 table {
   text-align: center;
   margin: 0 auto;

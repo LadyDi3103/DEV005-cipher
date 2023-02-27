@@ -3,33 +3,70 @@
 const cipher = {
   //metodo 1 => offset es el número de posiciones que queremos mover a la derecha en el alfabeto y string el mensaje (texto) que queremos cifrar.
 
-  encode : function(offset, string){
-              console.log("Este es mi texto",string);
-              let nuevaPalabra= "";  //VARIABLE GLOBAL 
-          for (let i = 0; i < string.length; i++) {
-              //charCodeAt(i) => obtengo los ascci de mi string y aplicando la formula + la nueva posición obtengo el nuevo ascci
-               let numero = string.charCodeAt(i) - 65 + offset % 
-               
-               26 + 65;
-               nuevaPalabra = nuevaPalabra.concat (String.fromCharCode(numero));
+  encode: function (offset, string) {
+    let nuevaPalabra = "";
+    const stringMayuscula = string.toUpperCase();
+    offset = offset % 26;
 
-              console.log("Esta es la nueva palabra",nuevaPalabra);       
-             }           
-             return(nuevaPalabra);          
+    for (let i = 0; i < stringMayuscula.length; i++) {
+      //charCodeAt(i) => obtengo los ascci de mi string y aplicando la formula + la nueva posición obtengo el nuevo ascci
+      let ascciString =stringMayuscula.charCodeAt(i);
+
+      if (ascciString >= 65 && ascciString <= 90) {
+        ascciString = ascciString + offset;
+
+        if (ascciString > 90) {
+          ascciString = ascciString - 26;
+
+        } else if (ascciString < 65) {
+          ascciString = ascciString + 26;
+
+        }
+        // } else if (ascciString >= 97 && ascciString <= 122) {
+        //   ascciString = ascciString + offset;
+
+        //   if (ascciString > 122) {
+        //     ascciString = ascciString - 26;
+
+      //   } else if (ascciString < 97) {
+      //     ascciString = ascciString + 26;
+      //   }
+      }
+      // } else {
+      //   alert ('Sólo se aceptan letras. Inténtalo nuevamente!');
+      // }
+      nuevaPalabra = nuevaPalabra + String.fromCharCode(ascciString);
+    }
+    return nuevaPalabra;
   },
 
   //método2 => offset es el número de posiciones que queremos mover a la izquierda en el alfabeto y string el mensaje (texto) que queremos descifrar.
 
   decode : function(offset, string){
-    console.log("texto a decoficar", string);
-    let nuevaPalabra= "";
-    for (let i = 0; i < string.length; i++) {
-      let numeroAscci = string.charCodeAt(i) - 65 - offset % 26 + 65;
-      console.log("asciis", numeroAscci);
-      nuevaPalabra = nuevaPalabra.concat (String.fromCharCode(numeroAscci-6));
-      console.log("palabra decodificada", nuevaPalabra);
-   }
-   return(nuevaPalabra);
+    let nuevaPalabra = "";
+    const stringMayuscula = string.toUpperCase();
+    offset = offset % 26;
+
+    for (let i = 0; i < stringMayuscula.length; i++) {
+      let ascciString = stringMayuscula.charCodeAt(i);
+
+      if (ascciString >= 72 && ascciString <= 90) {
+        ascciString = ascciString - offset;
+
+      } else if (ascciString >= 65 && ascciString <= 71) {
+        ascciString = ascciString + 26 - offset;
+
+      } else if (ascciString >= 97 && ascciString <= 122) {
+        ascciString = ascciString - offset;
+
+        if (ascciString > 122) {
+          ascciString = ascciString - 26;
+        }
+
+      }
+      nuevaPalabra = nuevaPalabra.concat (String.fromCharCode(ascciString));
+    }
+    return nuevaPalabra;
   }
 };
 
