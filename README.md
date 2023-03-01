@@ -1,6 +1,6 @@
-<em> # CIFRADO CÉSAR </em>
+# CIFRADO CÉSAR
 
-![Alt text](../../versionWebb.png)
+![Portada](../../versionWebb.png)
 
 El **Cifrado César** es uno de los primeros métodos más simples de cifrado, porque es un tipo de cifrado por sustitución, es decir que cada letra del texto original es reemplazada por otra que se encuentra un número fijo de posiciones **(Desplazamiento)** más adelante en el mismo alfabeto que conocemos. . El emperador romano Julio César lo usaba para enviar órdenes secretas a sus generales en los campos de batalla.
 
