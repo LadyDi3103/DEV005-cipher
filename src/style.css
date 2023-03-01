@@ -36,7 +36,7 @@ table {
 }
 
 /* imagen silent debajo de oso */
-#silent {             
+#silent {
   width: 262px;
   height: 360px;
 }
@@ -70,20 +70,6 @@ table {
   width: 3em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 div > div {
   margin: 10px;
   padding: 20px;
@@ -98,7 +84,4 @@ footer {
   bottom: 0;
   width: 100%;
   color: #000;
-  /* height: 21px; */
-  /* margin-top: 46px; */
 }
-
