@@ -16,12 +16,13 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "babel-jest": "^27.0.1",
+    "deploy-to-git": "^0.4.1",
     "eslint": "^8.3.0",
     "gh-pages": "^3.1.0",
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
     "opener": "^1.5.1",
-    "serve": "^13.0.2"
+    "serve": "^14.2.0"
   },
   "engines": {
     "node": ">=16.x"
@@ -30,5 +31,8 @@
     "createdAt": "2023-02-01T14:32:56.013Z",
     "version": "5.5.0",
     "commit": "36bf90dc273bab8ffe9546b09eece6a132f8a669"
+  },
+  "dependencies": {
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }
