@@ -1,85 +1,133 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <!-- background="img/body1.jpg" -->
+<html lang="es">
 
-  <body>
-    <div id="root">
-      <header>
-          <div>
-            <img id="logo" src="img/portadaRoja.jpg" alt="Imagen del logo.">
-          </div>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caesar Cipher</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/jpg" href="./img/cifrado-cesar.png" />
+</head>
 
+<body>
+  <div id="root">
+
+        <!--CABECERA-->
+        <header class="content__header">
+         
+            <div>
+              <img id="logo" src="img/cesar.png" alt="Imagen del logo Cesar.">
+              </div>
+              <div>
+                <h1>Cifrado Cesar</h1>
+                <h2>Cifrando tus Mensajes</h2>
+                 <img id="logo" src="img/codificador.png" alt="Imagen_Codificador.">
+              </div>
+  
+
+        </header>
+
+        <!--CONTENIDO PRINCIPAL-->
+    <div>
+       <!--CONTENEDOR DE LA BIENVENIDA-->
       <section id="section0" style="display: block;">
-        <br><br><br>
         <table style="text-align: center;">
           <tr>
-            <td><img id ="bienv" src="img/feliz-dia-del-amor-y-la-amistad-53_720.png" alt="logo bienvenida"></td>
-          </tr>
-
-          <tr>
-            <td><h1> ¡Bienvenid@ <strong><span id="nombreUsuario">  </span>!</strong></h1>
-        <h1><strong>Nos encanta tenerte aquí. Te gustaría enviar un mensaje cifrado a alguien y que nadie pueda leerlo... sólo tu y esa personita. Qué esperas? Escribe tu mensaje a cifrar y dale click en Codificar ;)</strong></h1>
+            <td>
+              <h1> ¡Bienvenid@ <strong><span id="nombreUsuario"> </span>!</strong></h1>
+              <h1><strong>Nos encanta tenerte aquí. Te gustaría enviar un mensaje cifrado a alguien y que nadie pueda
+                  leerlo... sólo tu y esa personita. Qué esperas? Escribe tu mensaje a cifrar y dale click en Codificar
+                  ;)</strong></h1>
             </td>
           </tr>
 
           <tr>
-            <td><button class="botones" type="button" id="btnEmpezar">Empezar</button></td>
+            <td><button class="buttons" type="button" id="btn__Empezar">Empezar</button></td>
           </tr>
         </table>
 
       </section>
-<!-- Cambiar los displays poner section 0 display none y al section 1 display none -->
+
+      <!--CONTENEDOR DEL CIFRADO--> 
       <section id="section1" style="display: none;">
-        <div id="container1" style="display: flex;">
-          <div>
-            <img src="img/osocora__360.gif" alt="Imagen Osita">
-            <br>
-              <img id="silent" src="img/quiet-silence.gif" alt="silencio">
 
-          </div>
+        <div id="container1">
+          
+          <!--CODIFICAR BOX-->
+          <!-- <div>
+            <img id="silent" src="img/quiet-silence.gif" alt="silencio">
+          </div> -->
 
-          <div>
+          <div id="content__msg__encode" class="msg-style display_block">
+
+        <!--ENLACES CODIFICADO Y DECODIFICADO-->
+        <div id="encode-decode" class="link__code">
+          <a href="#" id="link__encode" class="link_active">Codificar</a>
+          <a href="#" id="link__decode" >Decodificar</a>
+        </div>
+
             <p>Mensaje a Cifrar:</p>
-
-            <textarea name="text" id="aCifrar" cols="55" rows="15"></textarea>
-
-            <p>Posiciones: <input type="number" id="positions" min="1" value="1"> <button id="btnCodificar" class="botones" type="submit" value="Codificar">Codificar</button></p>
-
-
-            <h1>Mensaje cifrado:</h1>
-            <div id="msjCifrado">
-             <span id="aquiVa">Aquí iría el mensaje cifrado</span>
+            <div class="content__offset">
+              <textarea name="text" id="aCifrar" class="box_msg_style" placeholder="Ingrese su mensaje..." cols="30" rows="10"></textarea>
             </div>
+
+
+            <label class="label">Ingrese N° de desplazamiento</label>
+            <input type="number" id="positions" min="1" value="1">
+
+            <!-- <p>Posiciones:  -->
+              <!-- <input type="number" id="positions" min="1" value="1">  -->
+              <button id="btnCodificar" class="buttons" type="submit"     value="Codificar">Codifica tu Mensaje</button></p>
+
+              <!--AQUÍ IRÁ EL MENSAJE CODIFICADO-->
+
+              <div id="msg-encode" class="msg-ckeck">
+                <p id="msg-encode-check"></p>
+              </div>
+
+            <button onclick="location.reload();" class="buttons">Limpiar</button>
+
+            <!-- <h1>Mensaje cifrado:</h1>
+            <div id="msjCifrado">
+              <span id="aquiVa">Aquí iría el mensaje cifrado</span>
+            </div> -->
           </div>
 
-          <div>
-            <p>Mensaje a decifrar:</p>
-            <textarea name="text" id="aCifrar1" cols="55" rows="15"></textarea>
-            <br>
-            <button id="btnDecodificar" class="botones">Decodificar</button>
+          <!--DECODIFICAR BOX-->
 
-            <h1>Mensaje decifrado:</h1>
+          <div id="content__msg__decode" class="msg-style display_none">
+            <p>Mensaje a Descifrar:</p>
+            <textarea id="box-msg-decode" class="box_msg_style" placeholder="Ingrese su mensaje..." name="text" id="aCifrar1" id="box_msg_decode" rows="15"></textarea>
+            
+            <div class="content-offset">
+              <label class="label">Ingrese N° de desplazamiento</label>
+              <input type="number" id="n_offset_d" class="n_offset_style" min="1" value="1">
+          </div>
+
+            <button id="btnDecodificar" class="buttons">Decodifica tu Mensaje</button>
+            <div id="msg-decode" class="msg-ckeck">
+              <p id="msg-decode-check"></p>
+          </div>
+          <button onclick="location.reload();" class="buttons">Limpiar</button>
+
+            <!-- <h1>Mensaje decifrado:</h1>
             <div id="msjDecifrado">
 
-             <span id="aquiVaDecifrado">Aquí iría el mensaje cifrado</span>
-            </div>
+              <span id="aquiVaDecifrado">Aquí iría el mensaje cifrado</span>
+            </div> -->
           </div>
 
         </div>
 
       </section>
 
-</div>
-    <footer>
-        <p> Proyecto2 "Cipher Caesar" por Diana Quispe para Laboratoria -2023  “AÑO DE LA UNIDAD, LA PAZ Y EL DESARROLLO."</p>
-    </footer>
+    </div>
+
+  </div>
+  <footer>
+    <p> Proyecto2 "Cipher Caesar" por Diana Quispe para Laboratoria -2023 </p>
+  </footer>
   <script src="index.js" type="module"></script>
-  </body>
+</body>
+
 </html>
