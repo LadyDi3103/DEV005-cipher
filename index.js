@@ -94,24 +94,6 @@ function resetFields(section) {
   }
 }
 
-// **********
-
-/*rescatando el valor del texto a codificar */
-
-// const btnTextEncode = document.getElementById("btn__encode");
-// btnTextEncode.addEventListener("click", function () {
-//   const textEncode = document.getElementById("box__msg__encode").value;
-//   // textEncode = textEncode.toUpperCase();
-//   const number_offset = document.getElementById("n_offset_e").value;
-//   document.getElementById("msg__encode__check").innerHTML = window.cipher.encode(textEncode, number_offset);
-// });
-
-/*rescatando el valor del texto a decodificar*/
-
-// const btnTextDecode = document.getElementById("btn_decode");
-// btnTextDecode.addEventListener("click", function () {
-//   const textDecode = document.getElementById("box__msg__decode").value;
-//   //textDecode = textDecode.toUpperCase();
-//   const number_offset = document.getElementById("n_offset_d").value;
-//   document.getElementById("msg__decode__check").innerHTML = window.cipher.decode(textDecode, number_offset);
-// });
+// Event listeners for reset buttons
+document.getElementById('btnResetEncode').addEventListener('click', () => resetFields('encode'));
+document.getElementById('btnResetDecode').addEventListener('click', () => resetFields('decode'));
