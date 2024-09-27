@@ -1,87 +1,237 @@
-/* style por id */
+/* Style Variables */
+:root {
+  --claret-50: #fdf4f3;
+  --claret-100: #fce7e7;
+  --claret-200: #f9d2d5;
+  --claret-300: #f3aeb2;
+  --claret-400: #ec8089;
+  --claret-500: #e15262;
+  --claret-600: #cc324b;
+  --claret-700: #ab253d;
+  --claret-800: #902139;
+  --claret-900: #7d2037;
+  --claret-950: #440d19;
+}
+
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Body Styling */
 body {
   margin: 0;
   padding: 0;
-  /* background-repeat: no-repeat;
-  background-size: cover; */
-
-}
-
-header {
-  height: 150px;
-}
-
-#logo {
-  height: 150px;
-  width: 100%;
-}
-
-#seccion0  {
-    text-align: center;
-
-}
-
-#section1 {
-  padding: 20px;
-
-}
-
-table {
-  text-align: center;
-  margin: 0 auto;
-  padding: 10px 20px;
-  border: 2px solid black;
-  width: 45px;
-  display: table;
-}
-
-/* imagen silent debajo de oso */
-#silent {
-  width: 262px;
-  height: 360px;
-}
-#container1{
-  margin: -29px;
-  padding:0px;
-  font-size: 23px;
+  background-color: var(--claret-100);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.botones {
-  border: 2px solid #000;
-  margin: 0 0 1em 0;
-  padding: 10px;
-  width: 42%;
-  font-size: medium;
+#root {
+  width: 80%;
+  border-radius: 30px;
+  padding: 2rem 2.5rem;
+  border: 1px solid #008F99;
+  margin: 1.5rem auto;
+  background-color: #f8f8f9;
+  box-shadow: 3px 3px 7px 1px #333;
+  height: 34.7rem;
 }
 
-.botones {
-  border: 3px solid #850a25;
-  background-color: #cf0e0e;
-  border-radius: 5px;
-  padding: 10px 2em;
-  font-weight: bold;
-  color: #fff;
+/* Header Styles */
+.content__header {
+  display: flex;
+  justify-content: space-between;
 }
 
-#positions {
-  width: 3em;
+.logo-section {
+  flex: 0 0 25%;
 }
 
-div > div {
-  margin: 10px;
-  padding: 20px;
+#logo2 {
+  width: 70%;
+  height: auto;
 }
 
-footer {
+.text-section {
+  flex: 1;
+}
+
+.logo-section img {
+  width: 40%;
+  height: auto;
+}
+
+.content__header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4vw; /* Responsive font size */
+  color: var(--claret-900);
+  font-weight: 500;
+}
+
+.content__header h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5vw; /* Responsive font size */
+  color: black;
+  font-weight: 500;
+}
+
+.header-section {
   text-align: center;
-  font-family: sans-serif;
-  font-weight: 700;
-  background-color: red;
-  position: absolute;
-  bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .logo-section img {
+    display: none;
+  }
+
+  .content__header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Button Styles */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 1.5vw;
+  width: 260px;
+  height: 48px;
+  background-color: var(--claret-500);
+  border-radius: 10px;
+  color: #fff;
+  font-size: x-large;
+  font-family: monospace;
+  box-shadow: 3px 3px 7px 1px #898989;
+  cursor: pointer;
+  transition: 0.4s;
+  margin: 1.5rem auto 0;
+}
+
+.buttons:hover {
+  background-color: var(--claret-600); /* Slightly lighter tone for a smoother transition */
+}
+
+/* Link Styles */
+.link__code {
   width: 100%;
-  color: #000;
+  font-size: 22px;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.link_active {
+  border-bottom: 2px solid #008F99;
+  color: #008F99 !important;
+  padding-bottom: 5px;
+}
+
+.link__code a {
+  text-decoration: none;
+  color: #666666;
+  margin: 0 10px;
+}
+
+/* Footer */
+footer {
+    /* margin-top: auto; */
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.3vw;
+    font-weight: 500;
+    background-color: var(--claret-900);
+    width: 100%;
+    padding: 8px;
+    height: 2.4rem;
+    color: #f8f8f9;
+}
+
+/* Message Box Styles */
+.msg-ckeck {
+      /* width: 100%; */
+    /* min-height: 130px; */
+    background-color: #efefeb;
+    margin-bottom: 4.35rem;
+    padding: 1em;
+    box-shadow: 2px 2px 10px 1px #898989;
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+.box_msg_style, .msg-ckeck  {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 1em;
+}
+
+#nombreUsuario {
+  color: var(--claret-900);
+}
+
+.container_boxes{
+  padding: 0rem 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Styling the label */
+.label {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-right: 10px;
+}
+
+/* Styling the number input */
+#positions {
+  width: 60px; /* Adjust width for better appearance */
+  padding: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: 2px solid var(--claret-500);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  appearance: auto; /* Standard property for compatibility */
+  -moz-appearance: textfield; /* Firefox-specific property */
+  -webkit-appearance: none; /* Chrome, Safari-specific property */
+}
+
+/* Ensure the spin buttons are always visible for Webkit browsers */
+#positions::-webkit-outer-spin-button,
+#positions::-webkit-inner-spin-button {
+  -webkit-appearance: inner-spin-button;
+  display: inline;
+  opacity: 1; /* Ensure visibility */
+}
+
+
+/* Add focus effect */
+#positions:focus {
+  border-color: var(--claret-700);
+  box-shadow: 0 0 5px var(--claret-700);
+}
+
+/* Styling for placeholder */
+#positions::placeholder {
+  color: var(--claret-400);
+  opacity: 1; /* Make sure placeholder color is visible */
 }
