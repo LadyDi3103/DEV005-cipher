@@ -4,6 +4,7 @@ const seccion0 = document.getElementById("section0");
 const seccion1 = document.getElementById("section1");
 const boxEncode = document.getElementById("content__msg__encode");
 const boxDecode = document.getElementById("content__msg__decode");
+
 const botonInicio = document.getElementById("btn__Empezar");
 
 const nombreUser = prompt("¿Cúal es tu nombre?");
@@ -13,47 +14,48 @@ document.getElementById("nombreUsuario").textContent = nombreMayuscula;
 botonInicio.addEventListener("click", muestraSeccionOne);
 
 function muestraSeccionOne() {
+  console.log("muestraSeccionOne called");
   seccion0.style.display = "none";
   seccion1.style.display = "block";
-  // boxEncode.style.display = "block";
-  boxDecode.style.display = "none";
 }
 
+// Toggle encode/decode sections
+const linkEncode = document.getElementById("link__encode");
+const linkDecode = document.getElementById("link__decode");
 
-
-
-/* activado y desactivado de los enlaces de cada pestaña */
-const linkActive = document.getElementById("link__encode");
-const linkDesactive = document.getElementById("link__decode");
-
-linkActive.addEventListener("click", function () {
-  // document.getElementById("link__encode").classList.add("link_active");
-  // document.getElementById("link__decode").classList.remove("link_active");
-  // document.getElementById("content__msg__encode").classList.remove("display_none");
-  // document.getElementById("content__msg__encode").classList.add("display_block");
-  // document.getElementById("content__msg__decode").classList.remove("display_block");
-  // document.getElementById("content__msg__decode").classList.add("display_none");
-  toggleLinkActive(linkActive, linkDesactive, boxEncode, boxDecode);
-
-})
-
-linkDesactive.addEventListener("click", function () {
-  // document.getElementById("link-encode").classList.remove("link_active");
-  // document.getElementById("link-decode").classList.add("link_active");
-  // document.getElementById("content-msg-decode").classList.remove("display_none");
-  // document.getElementById("content-msg-decode").classList.add("display_block");
-  // document.getElementById("content-msg-encode").classList.remove("display_block");
-  // document.getElementById("content-msg-encode").classList.add("display_none");
-  toggleLinkActive(linkDesactive, linkActive, boxDecode, boxEncode);
+linkEncode.addEventListener("click", () => {
+  console.log("Encode link clicked");
+  toggleVisibility('encode');
 });
 
-function toggleLinkActive(linkToAdd, linkToRemove, boxToShow, boxToHide) {
-  linkToAdd.classList.add("link_active");
-  linkToRemove.classList.remove("link_active");
-  boxToShow.classList.remove("display_none");
-  boxToShow.classList.add("display_block");
-  boxToHide.classList.remove("display_block");
-  boxToHide.classList.add("display_none");
+linkDecode.addEventListener("click", () => {
+  console.log("Decode link clicked");
+  toggleVisibility('decode');
+});
+
+function toggleVisibility(action) {
+  console.log(`toggleVisibility called with action: ${action}`);
+  if (action === 'encode') {
+    console.log("Showing encoding box");
+    boxEncode.classList.remove("display_none");
+    boxEncode.classList.add("display_block");
+    boxDecode.classList.remove("display_block");
+    boxDecode.classList.add("display_none");
+
+    linkEncode.classList.add("link_active");
+    linkDecode.classList.remove("link_active");
+  } else if (action === 'decode') {
+    console.log("Showing decoding box");
+    boxDecode.classList.remove("display_none");
+    boxDecode.classList.add("display_block");
+    boxEncode.classList.remove("display_block");
+    boxEncode.classList.add("display_none");
+
+    linkDecode.classList.add("link_active");
+    linkEncode.classList.remove("link_active");
+  } else {
+    console.log("Unknown action");
+  }
 }
 
 const boton = document.getElementById("btnCodificar");
@@ -67,16 +69,30 @@ function codificarMensaje() {
   document.getElementById("aquiVa").textContent = msjCifrado;
 }
 
+const botonDecodificar = document.getElementById("btnDecodificar");
+botonDecodificar.addEventListener("click", decodificarMensaje);
+
 function decodificarMensaje() {
+  console.log("decodificarMensaje called");
   const texTarea2 = document.getElementById("aCifrar1").value;
-  const posiciones = document.getElementById("positions").value;
+  const posiciones = document.getElementById("positionsDecode").value;
 
   const msjDecifrado = cipher.decode(posiciones, texTarea2);
+  console.log(`Decoded message: ${msjDecifrado}`);
   document.getElementById("aquiVaDecifrado").textContent = msjDecifrado;
 }
 
-const botonDecodificar = document.getElementById("btnDecodificar");
-botonDecodificar.addEventListener("click", decodificarMensaje);
+function resetFields(section) {
+  if (section === 'encode') {
+    document.getElementById('aCifrar').value = ''; // Clear the encode textarea
+    document.getElementById('positions').value = '1'; // Reset the encode positions input
+    document.getElementById('aquiVa').textContent = ''; // Clear the encoded message output
+  } else if (section === 'decode') {
+    document.getElementById('aCifrar1').value = ''; // Clear the decode textarea
+    document.getElementById('positionsDecode').value = '1'; // Reset the decode positions input
+    document.getElementById('aquiVaDecifrado').textContent = ''; // Clear the decoded message output
+  }
+}
 
 // **********
 
