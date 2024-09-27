@@ -135,19 +135,31 @@ body {
   padding: 5px;
   text-align: center;
   margin-bottom: 1rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .link_active {
   border-bottom: 2px solid #008F99;
   color: #008F99 !important;
   padding-bottom: 5px;
+  /* text-decoration: underline; */
 }
 
-.link__code a {
-  text-decoration: none;
-  color: #666666;
-  margin: 0 10px;
+a{
+  text-decoration: none!important;
+  color: #333!important;
+
 }
+.display_none {
+  display: none;
+}
+
+.display_block {
+  display: block;
+}
+
 
 /* Footer */
 footer {
@@ -202,7 +214,7 @@ footer {
 }
 
 /* Styling the number input */
-#positions {
+#positions, #positionsDecode {
   width: 60px; /* Adjust width for better appearance */
   padding: 5px;
   font-size: 16px;
@@ -219,7 +231,10 @@ footer {
 
 /* Ensure the spin buttons are always visible for Webkit browsers */
 #positions::-webkit-outer-spin-button,
-#positions::-webkit-inner-spin-button {
+#positions::-webkit-inner-spin-button,
+#positionsDecode::-webkit-outer-spin-button,
+#positionsDecode::-webkit-inner-spin-button
+{
   -webkit-appearance: inner-spin-button;
   display: inline;
   opacity: 1; /* Ensure visibility */
@@ -227,13 +242,13 @@ footer {
 
 
 /* Add focus effect */
-#positions:focus {
+#positions:focus, #positionsDecode:focus {
   border-color: var(--claret-700);
   box-shadow: 0 0 5px var(--claret-700);
 }
 
 /* Styling for placeholder */
-#positions::placeholder {
+#positions::placeholder, #positionsDecode::placeholder {
   color: var(--claret-400);
   opacity: 1; /* Make sure placeholder color is visible */
 }

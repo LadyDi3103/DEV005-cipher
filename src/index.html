@@ -47,67 +47,70 @@
 
       <!--CONTENEDOR DEL CIFRADO-->
       <section id="section1" style="display: none;">
-                    <!--ENLACES CODIFICADO Y DECODIFICADO-->
-                    <div id="encode-decode" class="link__code">
-                      <a href="#" id="link__encode" class="link_active">Codificar</a>
-                      <a href="#" id="link__decode">Decodificar</a>
-                    </div>
+        <!--ENLACES CODIFICADO Y DECODIFICADO-->
+        <div id="encode-decode" class="link__code">
+          <a id="link__encode" class="link_active">Codificar</a>
+          <a id="link__decode">Decodificar</a>
+        </div>
 
-          <div id="content__msg__encode" class="msg-style display_block">
+        <div id="content__msg__encode" class="msg-style display_block">
 
-            <div class="container_boxes">
-              <div class="w-50">
-                <p>Mensaje a Cifrar:</p>
-                <div class="content__offset">
-                  <textarea name="text" id="aCifrar" class="box_msg_style" placeholder="Ingrese su mensaje..." cols="30"
-                    rows="10"></textarea>
-                </div>
-
-
-                <label class="label" for="positions">Ingrese N° de desplazamiento</label>
-                <input type="number" id="positions" min="1" value="1">
-
-                <!-- <p>Posiciones:  -->
-
-                <button id="btnCodificar" class="buttons" type="submit" value="Codificar">Codifica tu Mensaje</button>
+          <div class="container_boxes">
+            <div class="w-50">
+              <p>Mensaje a Cifrar:</p>
+              <div class="content__offset">
+                <textarea name="text" id="aCifrar" class="box_msg_style" placeholder="Ingrese su mensaje..." cols="30"
+                  rows="10"></textarea>
               </div>
 
-              <div class="w-50">
-                <!--AQUÍ IRÁ EL MENSAJE CODIFICADO-->
-                <p>Mensaje Cifrado:</p>
-                <div id="msg-encode" class="msg-ckeck">
-                  <p id="aquiVa"></p>
-                </div>
-                <button onclick="location.reload();" class="buttons">Limpiar</button>
+
+              <label class="label" for="positions">Ingrese N° de desplazamiento</label>
+              <input type="number" id="positions" min="1" value="1">
+
+              <!-- <p>Posiciones:  -->
+
+              <button id="btnCodificar" class="buttons" type="submit" value="Codificar">Codificar</button>
+            </div>
+
+            <div class="w-50">
+              <!--AQUÍ IRÁ EL MENSAJE CODIFICADO-->
+              <p>Mensaje Cifrado:</p>
+              <div id="msg-encode" class="msg-ckeck">
+                <p id="aquiVa"></p>
+              </div>
+              <button onclick="resetFields();" class="buttons">Limpiar</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--DECODIFICAR BOX-->
+
+        <div id="content__msg__decode" class="msg-style display_none">
+          <div class="container_boxes">
+            <div class="w-50">
+              <p>Mensaje a Descifrar:</p>
+              <textarea class="box_msg_style" placeholder="Ingrese su mensaje..." name="text" id="aCifrar1"
+                rows="15"></textarea>
+
+              <div class="content-offset">
+                <label class="label" for="positionsDecode">Ingrese N° de desplazamiento</label>
+                <input type="number" id="positionsDecode" class="n_offset_style" min="1" value="1">
               </div>
 
+              <button id="btnDecodificar" class="buttons">Decodificar</button>
             </div>
 
-            <!-- <h1>Mensaje cifrado:</h1>
-            <div id="msjCifrado">
-              <span id="aquiVa">Aquí iría el mensaje cifrado</span>
-            </div> -->
-          </div>
+            <div class="w-50">
+              <!--AQUÍ IRÁ EL MENSAJE CODIFICADO-->
+              <p>Mensaje Decifrado:</p>
+              <div id="msg-decode" class="msg-ckeck">
+                <p id="aquiVaDecifrado"></p>
+              </div>
+              <button onclick="resetFields();" class="buttons">Limpiar</button>
 
-          <!--DECODIFICAR BOX-->
-
-          <div id="content__msg__decode" class="msg-style display_none">
-            <p>Mensaje a Descifrar:</p>
-            <textarea id="box-msg-decode" class="box_msg_style" placeholder="Ingrese su mensaje..." name="text"
-              id="aCifrar1" id="box_msg_decode" rows="15"></textarea>
-
-            <div class="content-offset">
-              <label class="label">Ingrese N° de desplazamiento</label>
-              <input type="number" id="n_offset_d" class="n_offset_style" min="1" value="1">
             </div>
-
-            <button id="btnDecodificar" class="buttons">Decodifica tu Mensaje</button>
-            <div id="msg-decode" class="msg-ckeck">
-              <p id="aquiVaDecifrado"></p>
-            </div>
-            <button onclick="location.reload();" class="buttons">Limpiar</button>
-
-          </div>
 
       </section>
 
