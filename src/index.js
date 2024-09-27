@@ -56,8 +56,6 @@ function toggleLinkActive(linkToAdd, linkToRemove, boxToShow, boxToHide) {
   boxToHide.classList.add("display_none");
 }
 
-
-
 const boton = document.getElementById("btnCodificar");
 boton.addEventListener("click", codificarMensaje);
 
@@ -65,26 +63,21 @@ function codificarMensaje() {
   const texTarea1 = document.getElementById("aCifrar").value;
   const posiciones = document.getElementById("positions").value;
 
-  // let msjCifrado = document.getElementById("aquiVa");
-  // msjCifrado = cipher.encode(posiciones, texTarea1);
-  // const nuevoMensajeCifrado = document.getElementById("aquiVa");
-  // nuevoMensajeCifrado.textContent = msjCifrado;
   const msjCifrado = cipher.encode(posiciones, texTarea1);
   document.getElementById("aquiVa").textContent = msjCifrado;
+}
+
+function decodificarMensaje() {
+  const texTarea2 = document.getElementById("aCifrar1").value;
+  const posiciones = document.getElementById("positions").value;
+
+  const msjDecifrado = cipher.decode(posiciones, texTarea2);
+  document.getElementById("aquiVaDecifrado").textContent = msjDecifrado;
 }
 
 const botonDecodificar = document.getElementById("btnDecodificar");
 botonDecodificar.addEventListener("click", decodificarMensaje);
 
-function decodificarMensaje() {
-  const texTarea2 = document.getElementById("aCifrar1").value;
-  const posiciones = document.getElementById("positions").value;
-  // let msjDecifrado = document.getElementById("aquiVaDecifrado");
-  const msjDecifrado = cipher.decode(posiciones, texTarea2);
-  // const nuevoMensajeDecifrado = document.getElementById("aquiVaDecifrado");
-  // nuevoMensajeDecifrado.textContent = msjDecifrado;
-  document.getElementById("aquiVaDecifrado").textContent = msjDecifrado;
-}
 // **********
 
 /*rescatando el valor del texto a codificar */

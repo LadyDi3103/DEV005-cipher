@@ -40,11 +40,12 @@ body {
 #root {
   width: 80%;
   border-radius: 30px;
-  padding: 2.5rem;
+  padding: 2rem 2.5rem;
   border: 1px solid #008F99;
   margin: 1.5rem auto;
   background-color: #f8f8f9;
   box-shadow: 3px 3px 7px 1px #333;
+  height: 34.7rem;
 }
 
 /* Header Styles */
@@ -118,7 +119,7 @@ body {
   box-shadow: 3px 3px 7px 1px #898989;
   cursor: pointer;
   transition: 0.4s;
-  margin: 3.5rem auto 0;
+  margin: 1.5rem auto 0;
 }
 
 .buttons:hover {
@@ -131,7 +132,7 @@ body {
   font-size: 22px;
   padding: 5px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .link_active {
@@ -162,19 +163,19 @@ footer {
 
 /* Message Box Styles */
 .msg-ckeck {
-  width: 97%;
-  min-height: 130px;
-  background-color: #DADADA;
-  margin-top: 20px;
-  padding: 1em;
-  box-shadow: 2px 2px 10px 1px #898989;
-  border: 1px solid;
-  border-radius: 20px;
+      /* width: 100%; */
+    /* min-height: 130px; */
+    background-color: #efefeb;
+    margin-bottom: 4.35rem;
+    padding: 1em;
+    box-shadow: 2px 2px 10px 1px #898989;
+    border: 1px solid;
+    border-radius: 20px;
 }
 
-.box_msg_style {
+.box_msg_style, .msg-ckeck  {
   width: 100%;
-  height: 130px;
+  height: 120px;
   resize: none;
   outline: none;
   border-radius: 20px;
@@ -183,4 +184,54 @@ footer {
 
 #nombreUsuario {
   color: var(--claret-900);
+}
+
+.container_boxes{
+  padding: 0rem 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Styling the label */
+.label {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-right: 10px;
+}
+
+/* Styling the number input */
+#positions {
+  width: 60px; /* Adjust width for better appearance */
+  padding: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border: 2px solid var(--claret-500);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  appearance: auto; /* Standard property for compatibility */
+  -moz-appearance: textfield; /* Firefox-specific property */
+  -webkit-appearance: none; /* Chrome, Safari-specific property */
+}
+
+/* Ensure the spin buttons are always visible for Webkit browsers */
+#positions::-webkit-outer-spin-button,
+#positions::-webkit-inner-spin-button {
+  -webkit-appearance: inner-spin-button;
+  display: inline;
+  opacity: 1; /* Ensure visibility */
+}
+
+
+/* Add focus effect */
+#positions:focus {
+  border-color: var(--claret-700);
+  box-shadow: 0 0 5px var(--claret-700);
+}
+
+/* Styling for placeholder */
+#positions::placeholder {
+  color: var(--claret-400);
+  opacity: 1; /* Make sure placeholder color is visible */
 }
